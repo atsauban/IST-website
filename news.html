@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berita | IST Ngruki</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="assets/icons/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #6366f1 0%, #334155 100%);
+      border-radius: 9999px;
+      margin: 0 auto;
+      width: 80%;
+      opacity: 0.5;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.animate-fadein').forEach(function(el, i) {
+        setTimeout(() => {
+          el.classList.add('opacity-100', 'translate-y-0');
+        }, 200 + i * 150);
+      });
+    });
+  </script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 shadow-lg z-50 animate-fadein opacity-0 translate-y-4 transition-all duration-700">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-extrabold text-white flex items-center gap-2">
+        <i class="fas fa-university text-indigo-300"></i>
+        IST Ngruki
+      </h1>
+      <nav class="space-x-6 text-base font-medium">
+        <a href="index.html" class="hover:text-indigo-400 transition">Beranda</a>
+        <a href="about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
+        <a href="profile.html" class="hover:text-indigo-400 transition">Profil</a>
+        <a href="news.html" class="text-indigo-400 font-semibold underline underline-offset-4">Berita</a>
+        <a href="event.html" class="hover:text-indigo-400 transition">Pendaftaran</a>
+      </nav>
+    </div>
+    <div class="h-1 bg-gradient-to-r from-indigo-400 via-slate-700 to-indigo-900 opacity-50 rounded-full w-4/5 mx-auto"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-indigo-800 via-slate-800 to-indigo-900 py-16 text-center rounded-b-3xl shadow-lg mb-10">
+    <h2 class="text-3xl font-extrabold text-white mb-2 flex items-center justify-center gap-2">
+      <i class="fas fa-newspaper text-indigo-300"></i>
+      Berita & Kegiatan
+    </h2>
+    <p class="text-slate-400 max-w-3xl mx-auto">Kumpulan kabar terbaru dari IST Ngruki dan kegiatan santri yang inspiratif.</p>
+  </section>
+
+  <!-- Berita List -->
+  <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+    <!-- Berita 1 -->
+    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
+      <img src="https://source.unsplash.com/600x400/?school,event" alt="Foto Kegiatan" class="rounded-t-xl">
+      <div class="p-4">
+        <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
+          <i class="fas fa-star text-yellow-400"></i>
+          IST Festival 2025 Sukses Digelar
+        </h3>
+        <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+          <i class="fas fa-calendar-alt"></i>
+          15 Juli 2025
+        </p>
+        <p class="text-slate-300 text-sm">Ribuan peserta dan pengunjung memadati area pondok dalam rangkaian IST Festival 2025. Mulai dari lomba hingga malam puncak IST Night berlangsung meriah.</p>
+      </div>
+    </div>
+
+    <!-- Berita 2 -->
+    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
+      <img src="https://source.unsplash.com/600x400/?students,meeting" alt="Foto Rapat" class="rounded-t-xl">
+      <div class="p-4">
+        <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
+          <i class="fas fa-users text-indigo-300"></i>
+          Rapat Koordinasi Antar Departemen
+        </h3>
+        <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+          <i class="fas fa-calendar-alt"></i>
+          2 Juli 2025
+        </p>
+        <p class="text-slate-300 text-sm">IST Kalimasada menggelar rapat koordinasi internal untuk mematangkan agenda semester ganjil dan pembagian tugas antar pengurus departemen.</p>
+      </div>
+    </div>
+
+    <!-- Berita 3 -->
+    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
+      <img src="https://source.unsplash.com/600x400/?mosque,community" alt="Foto Masjid" class="rounded-t-xl">
+      <div class="p-4">
+        <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
+          <i class="fas fa-mosque text-indigo-300"></i>
+          Program Takmir Masjid Al-Mukmin Diluncurkan
+        </h3>
+        <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+          <i class="fas fa-calendar-alt"></i>
+          24 Juni 2025
+        </p>
+        <p class="text-slate-300 text-sm">Departemen Takmir IST resmi meluncurkan jadwal baru kajian, kebersihan, dan piket adzan di Masjid Pondok sebagai bentuk peran aktif santri.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10 animate-fadein opacity-0 translate-y-4 transition-all duration-700">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <i class="fas fa-university text-indigo-300"></i>
+      <span class="font-bold text-white">IST Ngruki</span>
+    </div>
+    <span class="block mb-2">&copy; 2025 IST Ngruki. Seluruh hak cipta dilindungi.</span>
+    <span class="text-xs text-slate-500">Design by GitHub Copilot</span>
+  </footer>
+
+</body>
+</html>

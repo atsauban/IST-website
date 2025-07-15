@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IST Festival | IST Ngruki</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 shadow-lg z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-extrabold text-white flex items-center gap-2">
+        <i class="fas fa-university text-indigo-300"></i>
+        IST Ngruki
+      </h1>
+      <nav class="space-x-6 text-base font-medium">
+        <a href="index.html" class="hover:text-indigo-400 transition">Beranda</a>
+        <a href="about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
+        <a href="profile.html" class="hover:text-indigo-400 transition">Profil</a>
+        <a href="news.html" class="hover:text-indigo-400 transition">Berita</a>
+        <a href="event.html" class="text-indigo-400 font-semibold underline underline-offset-4">Pendaftaran</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-indigo-800 via-slate-800 to-indigo-900 py-20 text-center rounded-b-3xl shadow-lg mb-10">
+    <h2 class="text-4xl font-extrabold text-white mb-4 drop-shadow">IST Festival</h2>
+    <p class="text-slate-300 max-w-3xl mx-auto text-lg">
+      IST Festival adalah acara tahunan terbesar Imaarotu Syu’unith Tholabah (IST) yang terbuka untuk umum. Acara ini mencakup lomba tingkat SD/MI, bazar makanan rakyat, dan malam puncak inspiratif bersama pembicara nasional.
+    </p>
+  </section>
+
+  <!-- IST Competition -->
+  <section class="max-w-4xl mx-auto px-4 py-12 bg-slate-800/80 rounded-2xl shadow-lg mb-10 border border-indigo-700">
+    <h3 class="text-2xl font-bold text-indigo-400 mb-3 flex items-center gap-2">
+      <i class="fas fa-trophy text-yellow-400"></i>
+      1. IST Competition
+    </h3>
+    <p class="text-slate-300 mb-6 text-base">
+      IST Competition adalah perlombaan tahunan yang mengundang siswa-siswi SD/MI dari seluruh DIY dan Jawa Tengah untuk berlomba di Pondok Pesantren Islam Al Mukmin Ngruki. 
+      Lomba yang diadakan meliputi:
+      <ul class="list-disc list-inside pl-4 text-slate-300 mt-2">
+        <li>Futsal</li>
+        <li>Pidato Cilik (Pildacil)</li>
+        <li>Adzan</li>
+        <li>Tilawah</li>
+      </ul>
+    </p>
+
+    <!-- Form IST Competition -->
+    <form class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 p-8 rounded-xl shadow space-y-5 border border-slate-700">
+      <h4 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+        <i class="fas fa-file-signature text-indigo-400"></i>
+        Formulir Pendaftaran IST Competition
+      </h4>
+      <input type="text" placeholder="Nama Lengkap Peserta" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition" required>
+      <input type="text" placeholder="Asal Sekolah (SD/MI)" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition" required>
+      <input type="text" placeholder="Nama Guru Pendamping" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition">
+      <select class="w-full p-3 rounded-lg bg-slate-700 text-white focus:ring-2 focus:ring-indigo-400 transition" required>
+        <option disabled selected>Pilih Jenis Lomba</option>
+        <option>Futsal</option>
+        <option>Pildacil</option>
+        <option>Adzan</option>
+        <option>Tilawah</option>
+      </select>
+      <input type="tel" placeholder="No. HP yang bisa dihubungi" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition" required>
+      <button class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-lg text-white font-bold shadow transition flex items-center gap-2">
+        <i class="fas fa-paper-plane"></i>
+        Kirim Pendaftaran
+      </button>
+    </form>
+  </section>
+
+  <!-- IST Food Fair -->
+  <section class="max-w-4xl mx-auto px-4 py-12 bg-slate-800/80 rounded-2xl shadow-lg mb-10 border-t-4 border-indigo-700">
+    <h3 class="text-2xl font-bold text-indigo-400 mb-3 flex items-center gap-2">
+      <i class="fas fa-utensils text-pink-400"></i>
+      2. IST Food Fair
+    </h3>
+    <p class="text-slate-300 text-base">
+      IST Food Fair adalah acara bazar kuliner yang menghadirkan pedagang kaki lima dari sekitar Pondok Ngruki untuk berjualan di dalam pondok. 
+      Terbuka untuk seluruh warga pondok dan masyarakat sekitar. 
+      Ajak teman-temanmu dan nikmati aneka makanan khas rakyat!
+    </p>
+  </section>
+
+  <!-- IST Night -->
+  <section class="max-w-4xl mx-auto px-4 py-12 bg-slate-800/80 rounded-2xl shadow-lg mb-10 border-t-4 border-indigo-700">
+    <h3 class="text-2xl font-bold text-indigo-400 mb-3 flex items-center gap-2">
+      <i class="fas fa-moon text-indigo-300"></i>
+      3. IST Night
+    </h3>
+    <p class="text-slate-300 mb-6 text-base">
+      Malam puncak IST Festival yang mengundang pembicara terkenal untuk berbagi inspirasi dan semangat dakwah. 
+      Acara ini terbuka untuk umum dan biasanya dihadiri santri, guru, wali santri, dan masyarakat luar.
+    </p>
+
+    <!-- Form IST Night -->
+    <form class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 p-8 rounded-xl shadow space-y-5 border border-slate-700">
+      <h4 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+        <i class="fas fa-user-check text-indigo-400"></i>
+        Formulir Kehadiran IST Night
+      </h4>
+      <input type="text" placeholder="Nama Lengkap" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition" required>
+      <input type="text" placeholder="Instansi / Asal (jika ada)" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition">
+      <input type="tel" placeholder="No. HP / WhatsApp" class="w-full p-3 rounded-lg bg-slate-700 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 transition" required>
+      <select class="w-full p-3 rounded-lg bg-slate-700 text-white focus:ring-2 focus:ring-indigo-400 transition" required>
+        <option disabled selected>Status Peserta</option>
+        <option>Santri</option>
+        <option>Guru</option>
+        <option>Wali Santri</option>
+        <option>Umum</option>
+      </select>
+      <button class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-lg text-white font-bold shadow transition flex items-center gap-2">
+        <i class="fas fa-user-plus"></i>
+        Daftar Hadir
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <i class="fas fa-university text-indigo-300"></i>
+      <span class="font-bold text-white">IST Ngruki</span>
+    </div>
+    <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
