@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Berita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/assets/icons/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
+  <nav class="bg-slate-800 p-4 shadow-md mb-8">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="/assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold">Imaarotu Syu’unith Tholabah</h1>
+      </div>
+      <a href="/news.html" class="text-indigo-400 font-semibold">Kembali ke Beranda</a>
+    </div>
+  </nav>
+  <main class="container mx-auto px-4" id="news-detail-container">
+    <!-- Detail berita akan di-render di sini -->
+  </main>
+  <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
+    </div>
+    <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
+  </footer>
+  <script>
+    // Ambil id dari query string
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+    function renderDetail() {
+      const idx = parseInt(getQueryParam('id'), 10);
+      const news = JSON.parse(localStorage.getItem('news') || '[]');
+      const container = document.getElementById('news-detail-container');
+      if (isNaN(idx) || !news[idx]) {
+        container.innerHTML = '<div class="text-slate-400">Berita tidak ditemukan.</div>';
+        return;
+      }
+      const item = news[idx];
+      container.innerHTML = `
+        <div class="bg-slate-800 rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+          <img src="${item.image || 'assets/images/adinaya.webp'}" alt="Gambar Berita" class="w-full h-64 object-cover rounded mb-6">
+          <h2 class="text-3xl font-bold text-indigo-400 mb-4">${item.title}</h2>
+          <p class="text-slate-300 mb-6">${item.full || item.content}</p>
+          <a href="/news.html" class="text-indigo-400 hover:underline">← Kembali ke daftar berita</a>
+        </div>
+      `;
+    }
+    renderDetail();
+  </script>
+</body>
+</html>

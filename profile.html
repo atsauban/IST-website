@@ -3,44 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Struktur Organisasi | IST Ngruki</title>
+  <title>profil</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/assets/icons/logo.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
 
   <!-- Navbar -->
-  <header class="sticky top-0 bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 shadow-lg z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-extrabold text-white flex items-center gap-2">
-        <i class="fas fa-university text-indigo-300"></i>
-        IST Ngruki
-      </h1>
-      <nav class="space-x-6 text-base font-medium">
+  <nav class="bg-slate-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="/assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold text-white">Imaarotu Syu’unith Tholabah</h1>
+      </div>
+      <!-- Hamburger Button (mobile) -->
+      <button id="menu-btn" class="md:hidden text-indigo-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menu -->
+      <div id="nav-menu" class="hidden md:flex space-x-6 text-base font-medium flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-slate-800 md:bg-transparent z-40 md:z-auto p-4 md:p-0">
         <a href="index.html" class="hover:text-indigo-400 transition">Beranda</a>
         <a href="about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
         <a href="profile.html" class="text-indigo-400 font-semibold underline underline-offset-4">Profil</a>
+        <a href="event.html" class="hover:text-indigo-400 transition">Event</a>
         <a href="news.html" class="hover:text-indigo-400 transition">Berita</a>
-        <a href="event.html" class="hover:text-indigo-400 transition">Pendaftaran</a>
-      </nav>
+      </div>
     </div>
-    <div class="h-1 bg-gradient-to-r from-indigo-400 via-slate-700 to-indigo-900 opacity-50 rounded-full w-4/5 mx-auto"></div>
-  </header>
+  </nav>
+  <script>
+    // Navbar mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Hero -->
   <section class="bg-gradient-to-br from-indigo-800 via-slate-800 to-indigo-900 py-16 text-center rounded-b-3xl shadow-lg mb-10">
     <h2 class="text-3xl font-extrabold text-white mb-2 flex items-center justify-center gap-2">
-      <i class="fas fa-sitemap text-indigo-300"></i>
-      Struktur Organisasi IST
+      <i class="fas fa-user-circle text-indigo-300"></i>
+      Profil IST Ngruki
     </h2>
-    <p class="text-slate-400">Berikut adalah struktur organisasi Imaarotu Syu’unith Tholabah dari berbagai periode</p>
+    <p class="text-slate-400">Selamat datang di halaman profil IST Ngruki. Kenali kami lebih dekat.</p>
   </section>
 
-  <!-- Struktur Kalimasada (2024/2025) -->
+  <!-- Visi dan Misi -->
+  <section class="max-w-4xl mx-auto px-4 py-12 bg-slate-800/80 rounded-2xl shadow-lg mb-10 border border-indigo-700">
+    <h3 class="text-2xl font-bold text-indigo-400 mb-4 flex items-center gap-2">
+      <i class="fas fa-bullseye text-indigo-300"></i>
+      Visi dan Misi
+    </h3>
+    <div class="text-slate-300 space-y-4">
+      <div>
+        <strong class="text-white">Visi:</strong>
+        <p>Mewujudkan pendidikan yang berkualitas dan berakhlakul karimah.</p>
+      </div>
+      <div>
+        <strong class="text-white">Misi:</strong>
+        <ul class="list-disc list-inside">
+          <li>Menyelenggarakan pendidikan yang berorientasi pada pengembangan potensi diri.</li>
+          <li>Menanamkan nilai-nilai keagamaan dan kebangsaan.</li>
+          <li>Memberikan bekal keterampilan hidup yang mandiri.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Struktur Organisasi -->
   <section class="max-w-5xl mx-auto px-4 py-12 bg-slate-800/80 rounded-2xl shadow-lg mb-10 border border-indigo-700">
     <h3 class="text-2xl font-bold text-indigo-400 mb-4 flex items-center gap-2">
-      <i class="fas fa-users text-indigo-300"></i>
-      Periode 2024/2025 - Kalimasada
+      <i class="fas fa-sitemap text-indigo-300"></i>
+      Struktur Organisasi
     </h3>
     <div class="grid md:grid-cols-2 gap-6 text-slate-300">
 
@@ -61,20 +98,18 @@
     </div>
   </section>
 
-  <!-- Placeholder Periode Sebelumnya -->
+  <!-- Placeholder Sejarah Singkat -->
   <section class="max-w-5xl mx-auto px-4 py-8 bg-slate-800/80 rounded-2xl shadow-lg mb-10 border-t-4 border-indigo-700">
     <h3 class="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
       <i class="fas fa-history text-indigo-300"></i>
-      Periode Sebelumnya
+      Sejarah Singkat
     </h3>
     <p class="text-slate-400 italic">Data akan ditambahkan... Jika kamu punya dokumentasi, silakan hubungi pengurus IST 😄</p>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
     <div class="flex justify-center items-center gap-2 mb-2">
-      <i class="fas fa-university text-indigo-300"></i>
-      <span class="font-bold text-white">IST Ngruki</span>
+      <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
     </div>
     <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
   </footer>

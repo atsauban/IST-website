@@ -20,25 +20,40 @@
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-3">
         <img src="assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
-        <h1 class="text-xl font-bold">IST Ngruki</h1>
+        <h1 class="text-xl font-bold">Imaarotu Syu’unith Tholabah</h1>
       </div>
-      <ul class="flex space-x-4">
+      <!-- Hamburger Button (mobile) -->
+      <button id="menu-btn" class="md:hidden text-indigo-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menu -->
+      <ul id="nav-menu" class="hidden md:flex space-x-4 md:space-x-4 flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-slate-800 md:bg-transparent z-40 md:z-auto p-4 md:p-0">
         <a href="index.html" class="text-indigo-400 font-semibold underline underline-offset-4">Beranda</a>
         <a href="about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
         <a href="profile.html" class="hover:text-indigo-400 transition">Profil</a>
         <a href="news.html" class="hover:text-indigo-400 transition">Berita</a>
-        <a href="event.html" class="hover:text-indigo-400 transition">Pendaftaran</a>
+        <a href="event.html" class="hover:text-indigo-400 transition">event</a>
       </ul>
     </div>
   </nav>
+  <script>
+    // Navbar mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Hero Section -->
-  <section class="text-center py-32 bg-hero relative">
+  <section class="text-center py-20 md:py-32 bg-hero relative">
     <div class="bg-black/60 absolute inset-0"></div>
     <div class="relative z-10 px-4">
-      <h2 class="text-4xl font-bold text-indigo-400 mb-4 animate-fade-in">Selamat Datang di Website Resmi</h2>
-      <h1 class="text-6xl font-extrabold text-white mb-6 animate-fade-in">Imaarotu Syu'unith Tholabah</h1>
-      <p class="text-lg text-slate-200 mb-8 animate-fade-in">OSIS Pondok Pesantren Islam Al Mukmin Ngruki</p>
+      <h2 class="text-2xl md:text-4xl font-bold text-indigo-400 mb-4 animate-fade-in">Selamat Datang di Website Resmi</h2>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 animate-fade-in">Imaarotu Syu'unith Tholabah</h1>
+      <p class="text-base md:text-lg text-slate-200 mb-8 animate-fade-in">OSIS Pondok Pesantren Islam Al Mukmin Ngruki</p>
       <a href="event.html" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full transition">Lihat Event Kami</a>
     </div>
   </section>
@@ -46,19 +61,14 @@
   <!-- Berita Terbaru -->
   <section class="container mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold text-indigo-400 mb-6">Berita Terbaru</h2>
-    <div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-      <img src="assets/images/adinaya.webp" alt="Berita IST" class="w-full h-64 object-cover">
-      <div class="p-6">
-        <h3 class="text-2xl font-semibold mb-2">Pembukaan IST Festival 2025 Meriah dan Penuh Semangat</h3>
-        <p class="text-slate-300 mb-4">IST Festival 2025 resmi dibuka oleh pimpinan pondok dengan sambutan hangat. Acara ini diikuti oleh puluhan sekolah dari berbagai daerah.</p>
-        <a href="news.html" class="text-indigo-400 hover:underline">Baca Selengkapnya →</a>
-      </div>
-    </div>
+    <div id="latest-news"></div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-800 p-4 text-center text-slate-400">
-    &copy; 2025 IST Ngruki. All rights reserved.
+  <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
+    </div>
+    <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
   </footer>
 
   <!-- Tailwind Animasi Manual -->
@@ -78,6 +88,30 @@
         }
       }
     }
+  </script>
+  <script>
+    // Tampilkan berita terbaru dari localStorage, jika kosong tampilkan pesan
+    function renderLatestNews() {
+      const container = document.getElementById('latest-news');
+      const news = JSON.parse(localStorage.getItem('news') || '[]');
+      if (news.length === 0) {
+        container.innerHTML = '<div class="text-slate-400">Belum ada berita terbaru.</div>';
+        return;
+      }
+      const item = news[0];
+      container.innerHTML = `
+        <div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+          <img src="${item.image || 'assets/images/adinaya.webp'}" alt="Berita IST" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">${item.title}</h3>
+            <p class="text-slate-300 mb-4">${item.content}</p>
+            <a href="news.html" class="text-indigo-400 hover:underline">Baca Selengkapnya →</a>
+          </div>
+        </div>
+      `;
+    }
+    renderLatestNews();
+  </script>
   </script>
 </body>
 </html>

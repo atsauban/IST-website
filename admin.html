@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Edit Berita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+  <script>
+    if (localStorage.getItem('isAdminLogin') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <nav class="bg-slate-800 p-4 shadow-md mb-8">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold">Admin Panel IST</h1>
+      </div>
+      <div class="flex gap-2">
+        <a href="change-password.html" class="bg-slate-700 hover:bg-indigo-500 text-white px-4 py-2 rounded">Ganti Password</a>
+        <button id="logout-btn" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Logout</button>
+      </div>
+    </div>
+  </nav>
+  <main class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-indigo-400 mb-6">Edit Berita</h2>
+    <form id="news-form" class="bg-slate-800 rounded-lg p-6 mb-8 shadow-lg">
+      <input type="hidden" id="news-id">
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold" for="news-title">Judul Berita</label>
+        <input type="text" id="news-title" class="w-full p-2 rounded bg-slate-700 text-white" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold" for="news-content">Isi Berita</label>
+        <textarea id="news-content" class="w-full p-2 rounded bg-slate-700 text-white" rows="4" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold" for="news-full">Isi Berita Lengkap</label>
+        <textarea id="news-full" class="w-full p-2 rounded bg-slate-700 text-white" rows="6" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold" for="news-image">URL Gambar</label>
+        <input type="text" id="news-image" class="w-full p-2 rounded bg-slate-700 text-white" placeholder="assets/images/adinaya.webp">
+      </div>
+      <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2 rounded-full font-bold">Simpan Berita</button>
+      <button type="button" id="cancel-edit" class="ml-2 bg-slate-600 hover:bg-slate-700 text-white px-6 py-2 rounded-full font-bold hidden">Batal</button>
+    </form>
+    <h3 class="text-2xl font-semibold text-indigo-300 mb-4">Daftar Berita</h3>
+    <div id="news-list" class="space-y-6"></div>
+  </main>
+  <script src="js/admin-news.js"></script>
+</body>
+<script>
+  document.getElementById('logout-btn').onclick = function() {
+    localStorage.removeItem('isAdminLogin');
+    window.location.href = 'login.html';
+  };
+</script>
+</body>
+</html>

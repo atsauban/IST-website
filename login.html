@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Admin IST</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center">
+  <div class="bg-slate-800 rounded-xl shadow-lg p-8 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-indigo-400 mb-6 text-center">Login Admin IST</h1>
+    <form id="login-form" class="space-y-4">
+      <div>
+        <label for="username" class="block mb-2 font-semibold">Username</label>
+        <input type="text" id="username" class="w-full p-2 rounded bg-slate-700 text-white" required>
+      </div>
+      <div>
+        <label for="password" class="block mb-2 font-semibold">Password</label>
+        <input type="password" id="password" class="w-full p-2 rounded bg-slate-700 text-white" required>
+      </div>
+      <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2 rounded-full font-bold w-full">Login</button>
+    </form>
+    <div id="login-error" class="text-red-400 mt-4 hidden text-center"></div>
+  </div>
+  <script>
+    // Hash sederhana (bukan untuk produksi, hanya demo)
+    function simpleHash(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return hash.toString();
+    }
+    function getPasswordHash() {
+      return localStorage.getItem('adminPasswordHash') || simpleHash('ist2025');
+    }
+    const USERNAME = 'admin';
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (username === USERNAME && simpleHash(password) === getPasswordHash()) {
+        localStorage.setItem('isAdminLogin', 'true');
+        window.location.href = 'admin.html';
+      } else {
+        document.getElementById('login-error').textContent = 'Username atau password salah!';
+        document.getElementById('login-error').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berita | IST Ngruki</title>
+  <title>Berita</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="assets/icons/logo.png">
+  <link rel="icon" href="/assets/icons/logo.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
   <style>
     html { scroll-behavior: smooth; }
@@ -31,22 +31,36 @@
 <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
 
   <!-- Navbar -->
-  <header class="sticky top-0 bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 shadow-lg z-50 animate-fadein opacity-0 translate-y-4 transition-all duration-700">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-extrabold text-white flex items-center gap-2">
-        <i class="fas fa-university text-indigo-300"></i>
-        IST Ngruki
-      </h1>
-      <nav class="space-x-6 text-base font-medium">
+  <nav class="bg-slate-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold text-white">Imaarotu Syu’unith Tholabah</h1>
+      </div>
+      <!-- Hamburger Button (mobile) -->
+      <button id="menu-btn" class="md:hidden text-indigo-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menu -->
+      <div id="nav-menu" class="hidden md:flex space-x-6 text-base font-medium flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-slate-800 md:bg-transparent z-40 md:z-auto p-4 md:p-0">
         <a href="index.html" class="hover:text-indigo-400 transition">Beranda</a>
         <a href="about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
         <a href="profile.html" class="hover:text-indigo-400 transition">Profil</a>
+        <a href="event.html" class="hover:text-indigo-400 transition">Event</a>
         <a href="news.html" class="text-indigo-400 font-semibold underline underline-offset-4">Berita</a>
-        <a href="event.html" class="hover:text-indigo-400 transition">Pendaftaran</a>
-      </nav>
+      </div>
     </div>
-    <div class="h-1 bg-gradient-to-r from-indigo-400 via-slate-700 to-indigo-900 opacity-50 rounded-full w-4/5 mx-auto"></div>
-  </header>
+  </nav>
+  <script>
+    // Navbar mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Hero -->
   <section class="bg-gradient-to-br from-indigo-800 via-slate-800 to-indigo-900 py-16 text-center rounded-b-3xl shadow-lg mb-10">
@@ -54,69 +68,53 @@
       <i class="fas fa-newspaper text-indigo-300"></i>
       Berita & Kegiatan
     </h2>
-    <p class="text-slate-400 max-w-3xl mx-auto">Kumpulan kabar terbaru dari IST Ngruki dan kegiatan santri yang inspiratif.</p>
+    <p class="text-slate-400 max-w-3xl mx-auto">berita terbaru Imaarotu Syu'unith Tholabah</p>
   </section>
 
   <!-- Berita List -->
-  <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
-    <!-- Berita 1 -->
-    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
-      <img src="https://source.unsplash.com/600x400/?school,event" alt="Foto Kegiatan" class="rounded-t-xl">
-      <div class="p-4">
-        <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
-          <i class="fas fa-star text-yellow-400"></i>
-          IST Festival 2025 Sukses Digelar
-        </h3>
-        <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
-          <i class="fas fa-calendar-alt"></i>
-          15 Juli 2025
-        </p>
-        <p class="text-slate-300 text-sm">Ribuan peserta dan pengunjung memadati area pondok dalam rangkaian IST Festival 2025. Mulai dari lomba hingga malam puncak IST Night berlangsung meriah.</p>
-      </div>
-    </div>
+  <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8" id="news-list"></section>
 
-    <!-- Berita 2 -->
-    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
-      <img src="https://source.unsplash.com/600x400/?students,meeting" alt="Foto Rapat" class="rounded-t-xl">
-      <div class="p-4">
-        <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
-          <i class="fas fa-users text-indigo-300"></i>
-          Rapat Koordinasi Antar Departemen
-        </h3>
-        <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
-          <i class="fas fa-calendar-alt"></i>
-          2 Juli 2025
-        </p>
-        <p class="text-slate-300 text-sm">IST Kalimasada menggelar rapat koordinasi internal untuk mematangkan agenda semester ganjil dan pembagian tugas antar pengurus departemen.</p>
-      </div>
-    </div>
-
-    <!-- Berita 3 -->
-    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
-      <img src="https://source.unsplash.com/600x400/?mosque,community" alt="Foto Masjid" class="rounded-t-xl">
-      <div class="p-4">
-        <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
-          <i class="fas fa-mosque text-indigo-300"></i>
-          Program Takmir Masjid Al-Mukmin Diluncurkan
-        </h3>
-        <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
-          <i class="fas fa-calendar-alt"></i>
-          24 Juni 2025
-        </p>
-        <p class="text-slate-300 text-sm">Departemen Takmir IST resmi meluncurkan jadwal baru kajian, kebersihan, dan piket adzan di Masjid Pondok sebagai bentuk peran aktif santri.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10 animate-fadein opacity-0 translate-y-4 transition-all duration-700">
     <div class="flex justify-center items-center gap-2 mb-2">
-      <i class="fas fa-university text-indigo-300"></i>
-      <span class="font-bold text-white">IST Ngruki</span>
+      <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
     </div>
-    <span class="block mb-2">&copy; 2025 IST Ngruki. Seluruh hak cipta dilindungi.</span>
-    <span class="text-xs text-slate-500">Design by GitHub Copilot</span>
+    <span class="block mb-2">&copy; 2025 IST Ngruki. All Rights reserved.</span>
   </footer>
 
 </body>
+  <script>
+    // Tampilkan semua berita dari localStorage, jika kosong maka tidak tampil apapun
+    function renderNewsList() {
+      const container = document.getElementById('news-list');
+      const news = JSON.parse(localStorage.getItem('news') || '[]');
+      let html = '';
+      if (news.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+      news.forEach((item, idx) => {
+        html += `
+          <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
+            <img src="${item.image || 'assets/images/adinaya.webp'}" alt="Foto Berita" class="rounded-t-xl">
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
+                <i class="fas fa-newspaper text-indigo-300"></i>
+                <a href="news/detail.html?id=${idx}" class="hover:underline">${item.title}</a>
+              </h3>
+              <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+                <i class="fas fa-calendar-alt"></i>
+                ${item.date || ''}
+              </p>
+              <p class="text-slate-300 text-sm">${item.content}</p>
+              <div class="mt-4">
+                <a href="news/detail.html?id=${idx}" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full font-bold">Baca Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+    renderNewsList();
+  </script>
 </html>
