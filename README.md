@@ -38,4 +38,4 @@ Tujuan dari website ini adalah untuk mempermudah penyampaian informasi seputar I
 1. buka tautan ini
    https://atsauban.github.io/IST-website
 
-   -semoga kedepannya bisa terus berkembang
+
