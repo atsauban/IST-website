@@ -28,7 +28,7 @@ Tujuan dari website ini adalah untuk mempermudah penyampaian informasi seputar I
 
 > Logo IST:
 >
-> ![Logo IST](ist.png)
+> <img src="ist.png" alt="Logo IST" width="150"/>
 >
 
 ---
@@ -38,4 +38,16 @@ Tujuan dari website ini adalah untuk mempermudah penyampaian informasi seputar I
 1. buka tautan ini
    https://atsauban.github.io/IST-website
 
+---
+
+## ingin berkontribusi?
+
+Kami sangat terbuka bagi siapa pun yang ingin membantu mengembangkan website ini!
+Baik dari sisi desain, pengembangan fitur, penulisan konten, dokumentasi, hingga testing.
+
+ Hubungi kami melalui WhatsApp: wa.me/6285869519538
+
+ ---
+
+ ### Website ini masih bersifat statis dan akan terus dikembangkan. Kedepannya akan ditambahkan fitur backend, admin panel, dan dashboard untuk pengelolaan konten.
 
