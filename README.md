@@ -45,7 +45,7 @@ Tujuan dari website ini adalah untuk mempermudah penyampaian informasi seputar I
 Kami sangat terbuka bagi siapa pun yang ingin membantu mengembangkan website ini!
 Baik dari sisi desain, pengembangan fitur, penulisan konten, dokumentasi, hingga testing.
 
- Hubungi kami melalui WhatsApp: wa.me/6285869519538
+ Hubungi kami melalui WhatsApp: https://wa.me/6285869519538
 
  ---
 
