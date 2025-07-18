@@ -23,19 +23,8 @@
     </form>
     <div id="login-error" class="text-red-400 mt-4 hidden text-center"></div>
   </div>
+  <script src="js/auth.js"></script>
   <script>
-    // Hash sederhana (bukan untuk produksi, hanya demo)
-    function simpleHash(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        hash = ((hash << 5) - hash) + str.charCodeAt(i);
-        hash |= 0;
-      }
-      return hash.toString();
-    }
-    function getPasswordHash() {
-      return localStorage.getItem('adminPasswordHash') || simpleHash('ist2025');
-    }
     const USERNAME = 'admin';
     document.getElementById('login-form').addEventListener('submit', function(e) {
       e.preventDefault();

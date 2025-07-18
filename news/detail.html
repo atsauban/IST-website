@@ -3,55 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detail Berita</title>
+  <title>Detail Berita - IST Ngruki</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="/assets/icons/logo.png">
+  <link rel="icon" href="../assets/icons/logo.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
-  <nav class="bg-slate-800 p-4 shadow-md mb-8">
+
+  <!-- Navbar -->
+  <nav class="bg-slate-800 p-4 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-3">
-        <img src="/assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
-        <h1 class="text-xl font-bold">Imaarotu Syu’unith Tholabah</h1>
+        <img src="../assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold text-white">Imaarotu Syu’unith Tholabah</h1>
       </div>
-      <a href="/news.html" class="text-indigo-400 font-semibold">Kembali ke Beranda</a>
+      <a href="../news.html" class="text-indigo-400 hover:underline">← Kembali ke Daftar Berita</a>
     </div>
   </nav>
-  <main class="container mx-auto px-4" id="news-detail-container">
-    <!-- Detail berita akan di-render di sini -->
+
+  <!-- Konten Berita -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <article id="news-detail-content" class="bg-slate-800/80 rounded-2xl shadow-lg p-6 md:p-10 border border-indigo-700">
+      <!-- Konten akan diisi oleh JavaScript -->
+      <p class="text-center">Memuat berita...</p>
+    </article>
   </main>
+
   <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
     <div class="flex justify-center items-center gap-2 mb-2">
       <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
     </div>
     <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
   </footer>
+
   <script>
-    // Ambil id dari query string
-    function getQueryParam(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
-    function renderDetail() {
-      const idx = parseInt(getQueryParam('id'), 10);
-      const news = JSON.parse(localStorage.getItem('news') || '[]');
-      const container = document.getElementById('news-detail-container');
-      if (isNaN(idx) || !news[idx]) {
-        container.innerHTML = '<div class="text-slate-400">Berita tidak ditemukan.</div>';
+    async function renderNewsDetail() {
+      const container = document.getElementById('news-detail-content');
+      const params = new URLSearchParams(window.location.search);
+      const newsId = params.get('id');
+
+      if (!newsId) {
+        container.innerHTML = '<p class="text-red-400 text-center">Berita tidak ditemukan.</p>';
         return;
       }
-      const item = news[idx];
-      container.innerHTML = `
-        <div class="bg-slate-800 rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-          <img src="${item.image || 'assets/images/adinaya.webp'}" alt="Gambar Berita" class="w-full h-64 object-cover rounded mb-6">
-          <h2 class="text-3xl font-bold text-indigo-400 mb-4">${item.title}</h2>
-          <p class="text-slate-300 mb-6">${item.full || item.content}</p>
-          <a href="/news.html" class="text-indigo-400 hover:underline">← Kembali ke daftar berita</a>
-        </div>
-      `;
+
+      try {
+        const response = await fetch('../data/news.json');
+        const newsList = await response.json();
+        const newsItem = newsList.find(item => item.id === newsId);
+
+        if (!newsItem) {
+          container.innerHTML = '<p class="text-red-400 text-center">Berita tidak ditemukan.</p>';
+          return;
+        }
+
+        document.title = `${newsItem.title} - IST Ngruki`; // Update judul halaman
+
+        container.innerHTML = `
+          <h1 class="text-3xl md:text-4xl font-extrabold text-indigo-300 mb-4">${newsItem.title}</h1>
+          <p class="text-slate-400 mb-6 flex items-center gap-2"><i class="fas fa-calendar-alt"></i> ${newsItem.date || ''}</p>
+          <img src="../${newsItem.image || 'assets/images/adinaya.webp'}" alt="${newsItem.title}" class="rounded-lg mb-6 w-full object-cover shadow-lg">
+          <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed">${newsItem.fullContent.replace(/\n/g, '<br>')}</div>
+        `;
+      } catch (error) {
+        container.innerHTML = '<p class="text-red-400 text-center">Gagal memuat detail berita.</p>';
+        console.error('Error fetching news detail:', error);
+      }
     }
-    renderDetail();
+    renderNewsDetail();
   </script>
 </body>
 </html>

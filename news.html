@@ -9,14 +9,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
   <style>
     html { scroll-behavior: smooth; }
-    .divider {
-      height: 2px;
-      background: linear-gradient(90deg, #6366f1 0%, #334155 100%);
-      border-radius: 9999px;
-      margin: 0 auto;
-      width: 80%;
-      opacity: 0.5;
-    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -83,37 +75,39 @@
 
 </body>
   <script>
-    // Tampilkan semua berita dari localStorage, jika kosong maka tidak tampil apapun
-    function renderNewsList() {
+    async function renderNewsList() {
       const container = document.getElementById('news-list');
-      const news = JSON.parse(localStorage.getItem('news') || '[]');
-      let html = '';
-      if (news.length === 0) {
-        container.innerHTML = '';
-        return;
-      }
-      news.forEach((item, idx) => {
-        html += `
-          <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
-            <img src="${item.image || 'assets/images/adinaya.webp'}" alt="Foto Berita" class="rounded-t-xl">
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
-                <i class="fas fa-newspaper text-indigo-300"></i>
-                <a href="news/detail.html?id=${idx}" class="hover:underline">${item.title}</a>
-              </h3>
-              <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
-                <i class="fas fa-calendar-alt"></i>
-                ${item.date || ''}
-              </p>
-              <p class="text-slate-300 text-sm">${item.content}</p>
-              <div class="mt-4">
-                <a href="news/detail.html?id=${idx}" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full font-bold">Baca Selengkapnya</a>
+      try {
+        const response = await fetch('data/news.json');
+        const news = await response.json();
+        if (news.length === 0) {
+          container.innerHTML = '<p class="text-slate-400 col-span-3 text-center">Belum ada berita yang dipublikasikan.</p>';
+          return;
+        }
+        const html = news.map(item => `
+            <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900 rounded-xl shadow-lg hover:shadow-2xl transition border border-indigo-700">
+              <img src="${item.image || 'assets/images/adinaya.webp'}" alt="Foto Berita" class="rounded-t-xl w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold text-indigo-400 flex items-center gap-2">
+                  <i class="fas fa-newspaper text-indigo-300"></i>
+                  <a href="news/detail.html?id=${item.id}" class="hover:underline">${item.title}</a>
+                </h3>
+                <p class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+                  <i class="fas fa-calendar-alt"></i>
+                  ${item.date || ''}
+                </p>
+                <p class="text-slate-300 text-sm">${item.content}</p>
+                <div class="mt-4">
+                  <a href="news/detail.html?id=${item.id}" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full font-bold">Baca Selengkapnya</a>
+                </div>
               </div>
             </div>
-          </div>
-        `;
-      });
-      container.innerHTML = html;
+          `).join('');
+        container.innerHTML = html;
+      } catch (error) {
+        container.innerHTML = '<p class="text-slate-400 col-span-3 text-center">Gagal memuat berita.</p>';
+        console.error('Error fetching news list:', error);
+      }
     }
     renderNewsList();
   </script>
