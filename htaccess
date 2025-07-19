@@ -1,0 +1,30 @@
+ErrorDocument 404 /404.html
+
+# Redirect ke HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Blok akses ke folder .git
+RedirectMatch 404 /\.git
+
+# Disable directory listing
+Options -Indexes
+
+# Proteksi file sensitif
+<FilesMatch "\.(htaccess|git|yml|ini|log|md)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Kompresi dan cache browser
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+ErrorDocument 404 /404.html
