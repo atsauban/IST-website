@@ -3,30 +3,1313 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sedang Dalam Pengembangan</title>
+  <title>Adinaya - IST Ngruki</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #0f172a, #1e293b);
-    }
-  </style>
+  <link rel="icon" href="/assets/icons/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
-<body class="text-white flex items-center justify-center min-h-screen px-4">
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
 
-  <div class="text-center max-w-md space-y-6">
-    <img src="/assets/adinaya/logobag/adinaya.webp" alt="Logo Adinaya"
-      class="w-24 h-24 mx-auto animate-bounce rounded-full drop-shadow-xl">
-      <h6 class="text-1xl md:text14xl font-bold">Adinaya 47H</h6>
-
-    <h1 class="text-3xl md:text-4xl font-bold">Halaman Sedang Dalam Pengembangan</h1>
-    <p class="text-gray-300 text-base md:text-lg">Silakan kembali lagi nanti!</p>
-
-    <div class="flex justify-center space-x-4">
-      <a href="/" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-xl transition-all duration-300">
-        Kembali ke Beranda
-      </a>
+  <!-- Navbar -->
+  <nav class="bg-slate-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="/assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold text-white">Imaarotu Syu’unith Tholabah</h1>
+      </div>
+      <!-- Hamburger Button (mobile) -->
+      <button id="menu-btn" class="md:hidden text-indigo-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menu -->
+      <div id="nav-menu" class="hidden md:flex space-x-6 text-base font-medium flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-slate-800 md:bg-transparent z-40 md:z-auto p-4 md:p-0">
+        <a href="/index.html" class="hover:text-indigo-400 transition">Beranda</a>
+        <a href="/about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
+        <a href="/profile.html" class="hover:text-indigo-400 transition">Profil</a>
+        <a href="/event.html" class="hover:text-indigo-400 transition">Event</a>
+        <a href="/news.html" class="hover:text-indigo-400 transition">Berita</a>
+      </div>
     </div>
-  </div>
+  </nav>
+  <script>
+    // Navbar mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
 
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-br from-indigo-800 via-slate-800 to-indigo-900 py-16 text-center rounded-b-3xl shadow-lg mb-10">
+      <div class="max-w-4xl mx-auto px-4">
+        <img src="../assets/adinaya/logobag/adinaya.webp" alt="Logo Adinaya"
+          class="w-32 h-32 mx-auto mb-4 object-contain">
+        <h2 class="text-4xl font-extrabold text-white mb-2">
+          Kepengurusan Periode Adinaya
+        </h2>
+        <p class="text-slate-300 text-lg">Periode 2024-2025</p>
+        <div class="mt-6">
+          <a href="../profile.html" class="text-indigo-300 hover:underline">← Kembali ke Profil IST</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Struktur Organisasi -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+      <div class="bg-slate-800/80 rounded-2xl shadow-lg p-6 md:p-10 border border-indigo-700">
+        <h3 class="text-2xl font-bold text-indigo-400 mb-6 text-center flex items-center justify-center gap-2">
+          Adinaya
+        </h3>
+        <!-- Ganti src dengan path ke gambar struktur organisasi Anda -->
+        <img src="/assets/" alt="Foto Bareng Adinaya"
+          class="rounded-lg w-full object-contain shadow-md bg-slate-700/50 p-2">
+        <p class="text-center text-slate-400 mt-2 text-sm">Kepengurusan IST Periode Adinaya</p>
+      </div>
+    </section>
+
+    <!-- Anggota Kepengurusan -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <h3 class="text-3xl font-bold text-indigo-300 mb-10 text-center">Anggota Kepengurusan</h3>
+
+      <!-- Bagian Ketua & Wakil -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-3">
+          Ketua & Wakil
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Albayni Zuhdi</h5>
+            <p class="text-indigo-400 font-semibold">Ketua IST</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Tsani Arya Simbara</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Ketua IST</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian Sekretaris -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-3">
+          <img src="/assets/adinaya/logobag/saturn.webp" alt="Logo Sekretaris" class="w-10 h-10 object-contain">
+          <span>Sekretaris</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Ketua Sekre"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Firman Novariyanto</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Sekretaris</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Rhasa Aullia Ramadhan</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Sekretaris</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian Bendahara -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-3">
+          <img src="/assets/adinaya/logobag/bendahara.webp" alt="Logo Bendahara" class="w-10 h-10 object-contain">
+          <span>Bendahara</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Ainnur Al Huda</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Bendahara</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Danish Ahza</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Bendahara</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian Bahasa -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/lughoh.webp" alt="Logo lughoh" class="w-10 h-10 object-contain">
+          <span>Bagian Bahasa</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Habib Mahardika</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Bahasa</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Faith Aufa Setiawan</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Bahasa</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Haedar Yasin</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">M. Miqdad</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @        
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Arvin Ibnu Hakim</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Akhdan Aqwam Assajidan</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Faris Khoiru Mumtaza</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Yusuf</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Ikhsan Dzikrullah</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Eko Santoso</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Jundi Syuhada</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Daffa Asykarullah Ayyasy</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian AMN -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/hydra.webp" alt="Logo Keamanan" class="w-10 h-10 object-contain">
+          <span>Bagian Keamanan</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Kadzwul Rifqi</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Keamanan</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Raiyan Ramadhan</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Keamanan</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Rizky Darussalam</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Faizul Mumtaz</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto angg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Rifqi Ibrahim</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag" alt="Foto angg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Abyan Makurusetra</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Maulana Syarifaturrohim</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">M. Nur Fadhil Abdurrochim</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Wafa Mukhoyyar</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian UBS -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/tandhim.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian UBS</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Faris Dhiyaul Mukadis</h5>
+            <p class="text-indigo-400 font-semibold">Ketua UBS</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Anwaru Aththar An-Najiy</h5>
+            <p class="text-indigo-400 font-semibold">Wakil UBS</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Ilham Khoirul Hanafi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Fahmi Ma'ruf</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto" alt="Foto anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Razka Izzuddin Al-Qasam</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto" alt="Foto anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Zufar</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Fauzan</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Saekhu Ali</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Saiful Fatah Al-Ghozi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Fatih Al-Farouq</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian Dakwah -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/dakwah.webp" alt="Logo UBS" class="w-8 h-8 object-contain">
+          <span>Bagian Dakwah</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Ariesto Ryandika Nugraha</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Dakwah</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Mukhammad Azmi Al-Mufti</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Dakwah</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Ahmad Mughni Labib</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Hilal Al Mudatsir</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Abdan El Rauf</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Abdillah Aiman</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Firdaus An</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Izzudin Dwi Safana</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Faiq Aqil Qushoyyi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian Rivan -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/rivan.webp" alt="Logo Rivan" class="w-10 h-10 object-contain">
+          <span>Bagian Rivan</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Haikal Adha Al Majdi</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Rivan</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Faiq Athoullah</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Rivan</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Habib Nur Wibowo</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Dafa Qintoriy Al Kafi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Syeihan Muhammad Hisyam</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt=" Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Ahmad Ata Firdaus Ardiansyah</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Farouq Elhaq</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Muhammad Fachri Rachmanto</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Nasron Aziz</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muflih Kafi Rizal</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Sahal Fattah</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Fahri Mursyidan Sutya Putra</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bagian Nadhofah -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/nadhofah.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian K3</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/nadhofa" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Rizky Ramadhan</h5>
+            <p class="text-indigo-400 font-semibold">Ketua K3</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/nadho" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Risyad Ali</h5>
+            <p class="text-indigo-400 font-semibold">Wakil K3</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/nadh" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Yahya Muhana Amruddien</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Daffa Al-Mumtaza</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Yusuf Nashiruddin An-Naufal</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/n" alt=" Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Rosyid Rifa'i</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/pot" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Nabil Fauzan Hilman</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/na" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Hannan Sanie</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Khirza Qori Ramadhan</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Abdul Aziz Hami Haramain</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">M. Naufal Nur Abidin Sholeh</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+        <!-- Bagian Takmir -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/kalimasada/logobag/PUNTADEWA.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian Takmir</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takm" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Zieda Fateh Az Zubaier</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Takmir</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/i" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Syuhaib Ar rib'i</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Takmir</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/fais.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Umar Salim</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/oyong.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Ghazy Rizky Hawary</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/repan.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Aulia Rahman Al Khalifi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/soleh.web" alt=" Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Awaluddin Fadhila</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/aqop.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Syamsi Muzaky</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/ipan.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Hudzaifah</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/ghozi.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Ahmad Mujahiddin</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/altop.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Ibnu Sina Tamami</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/altop.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Imrald Fath Amrullah</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/takmir/altop.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Hardy Labib Assidqi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+       <!-- Bagian Waserda -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/Waserda.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian Waserda</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/waserda/iwen.web" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Fadhil Rahmat Amarullah</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Waserda</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/waserda/cipto.web" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Faiq Aqila</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Waserda</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/waserda/jamil.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Ficky Athamirza</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/waserda/kesi.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Ichwansyah Al Ma’ruf</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+   <!-- Bagian Al Mukminun -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/almukminun.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian Al Mukminun</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/almukminun/reza.web" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Alef Salman Al Farisi</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Al Mukminun</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/almukminun/faza.web" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Nur Fadhil</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Al Mukminun</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/almukminun/atsa.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Nasywan Raditya Latief</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+           <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/almukminun/atsa.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Dayu Ahmad Syahputra</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+           <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/almukminun/atsa.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Rofi’ Abbas Habibi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+       <!-- Bagian Ghurfah -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/virgoo.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian Penerima Tamu</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/gurfah/koron.web" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Syamil Basayev</h5>
+            <p class="text-indigo-400 font-semibold">Ketua Ghurfah</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/gurfah/wafiy.web" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Arvian Dzikri Al A'raaf</h5>
+            <p class="text-indigo-400 font-semibold">Wakil Ghurfah</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/gurfah/hanipawal.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Bangun Maulana Oktaviandra</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/gurfah/fmk.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Omar Muhammad Arsyad</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/gurfah/fmk.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Muhammad Habibullah Ar-Rosyidi</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+        </div>
+      </div>
+       <!-- Bagian BP -->
+      <div class="mb-12">
+        <h4 class="text-2xl font-semibold text-white mb-6 border-b-2 border-indigo-500 pb-2 flex items-center gap-4">
+          <img src="/assets/adinaya/logobag/bp.webp" alt="Logo UBS" class="w-10 h-10 object-contain">
+          <span>Bagian UKP</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Kartu Anggota (Contoh) -->
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/bp/hakim.web" alt="Foto Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white"> Isa Haqqul Huda</h5>
+            <p class="text-indigo-400 font-semibold">Ketua UKP</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/bp/nibras.web" alt="Foto Wakil Ketua"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Hamzah Assadullah</h5>
+            <p class="text-indigo-400 font-semibold">Wakil UKP</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/bp/faujim.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Raya Rabbani Prasetyo</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+          <div
+            class="bg-slate-800 rounded-xl p-6 text-center shadow-lg border border-slate-700 hover:border-indigo-500 transition">
+            <img src="/assets/kalimasada/logobag/poto/bp/hafiz.web" alt="Foto Anggota"
+              class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+            <h5 class="text-xl font-bold text-white">Raziq Hanania Putra Denis</h5>
+            <p class="text-indigo-400 font-semibold">Anggota</p>
+            <a href="https://instagram.com/" target="_blank"
+              class="text-slate-400 hover:text-white transition mt-2 inline-block">
+              <i class="fab fa-instagram"></i> @
+            </a>
+          </div>
+         </div>
+        </div>
+  </main>
+  <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
+    </div>
+    <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
+  </footer>
 </body>
 </html>

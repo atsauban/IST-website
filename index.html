@@ -3,22 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IST Ngruki</title>
+  <title>Beranda - IST Ngruki</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="assets/icons/logo.png">
-  <style>
-    .bg-hero {
-      background-image: url('assets/images/bg-ist.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-white">
-  <!-- Navbar -->
-  <header id="navbar-placeholder" class="bg-slate-800 p-4 shadow-md"></header>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-slate-200 min-h-screen">
 
+  <!-- Navbar -->
+  <nav class="bg-slate-800 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="assets/icons/logo.png" alt="Logo IST" class="w-10 h-10">
+        <h1 class="text-xl font-bold text-white">Imaarotu Syu’unith Tholabah</h1>
+      </div>
+      <!-- Hamburger Button (mobile) -->
+      <button id="menu-btn" class="md:hidden text-indigo-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menu -->
+      <div id="nav-menu" class="hidden md:flex space-x-6 text-base font-medium flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-slate-800 md:bg-transparent z-40 md:z-auto p-4 md:p-0">
+        <a href="index.html" class="text-indigo-400 font-semibold underline underline-offset-4">Beranda</a>
+        <a href="about.html" class="hover:text-indigo-400 transition">Tentang Kami</a>
+        <a href="profile.html" class="hover:text-indigo-400 transition">Profil</a>
+        <a href="event.html" class="hover:text-indigo-400 transition">Event</a>
+        <a href="news.html" class="hover:text-indigo-400 transition">Berita</a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    // Navbar mobile toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
   <!-- Hero Section -->
   <section class="text-center py-20 md:py-32 bg-hero relative">
     <div class="bg-black/60 absolute inset-0"></div>
@@ -34,9 +56,12 @@
     <h2 class="text-3xl font-bold text-indigo-400 mb-6">Berita Terbaru</h2>
     <div id="latest-news"></div>
   </section>
-
-  <footer id="footer-placeholder" class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10"></footer>
-
+  <footer class="bg-gradient-to-r from-indigo-700 via-slate-800 to-indigo-900 text-center text-slate-400 text-sm py-8 border-t border-indigo-700 rounded-t-2xl shadow-lg mt-10">
+    <div class="flex justify-center items-center gap-2 mb-2">
+      <span class="font-bold text-white">Imaarotu Syu'unith Tholabah</span>
+    </div>
+    <div>&copy; 2025 IST Ngruki. All rights reserved.</div>
+  </footer>
   <script>
     // Tampilkan berita terbaru dari localStorage, jika kosong tampilkan pesan
     async function renderLatestNews() {
@@ -65,7 +90,22 @@
       }
     }
     renderLatestNews();
+
+        tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 1.5s ease-out forwards'
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
   </script>
-  <script src="/js/components.js" defer></script>
 </body>
 </html>
