@@ -1,4 +1,5 @@
+---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/istw_2399/public_html
+    - export DEPLOYPATH=/home/USERNAME/public_html
     - /bin/cp -r * $DEPLOYPATH
